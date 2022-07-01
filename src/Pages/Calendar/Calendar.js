@@ -6,7 +6,7 @@ import 'react-day-picker/dist/style.css';
 const Calendar = () => {
     const [date, setDate] = useState(new Date ());
     return (
-        <div>
+        <div className="my-20 h-screen">
             <DayPicker
             mode = "single"
             selected={date}
