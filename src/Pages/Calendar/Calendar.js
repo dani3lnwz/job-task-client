@@ -1,20 +1,30 @@
-import { format } from 'date-fns';
 import React, { useState } from 'react';
-import {DayPicker} from 'react-day-picker';
+// import Footer from '../Shared/Footer';
+import calender from '../../assests/calendar.png';
+import { DayPicker } from 'react-day-picker';
 import 'react-day-picker/dist/style.css';
 
-const Calendar = () => {
-    const [date, setDate] = useState(new Date ());
+const Calender = () => {
+    const [date, setDate] = useState(new Date());
     return (
-        <div className="my-20 h-screen">
-            <DayPicker
-            mode = "single"
-            selected={date}
-            onSelect = {setDate}
-            />
-            <p>You Have Selected: {format(date, 'PP')}</p>
+        <div>
+            <h2 className='text-center font-bold mt-5 mb-4 text-4xl text-primary'>This is calender</h2>
+            <div class="hero mb-5">
+                <div class="hero-content flex-col lg:flex-row-reverse">
+                    <img src={calender} alt='Calender image' />
+                    <div>
+                        <DayPicker
+                            mode="single"
+                            selected={date}
+                            onSelect={setDate}
+                        />
+                    </div>
+                </div>
+
+            </div>
+            {/* <Footer></Footer> */}
         </div>
     );
 };
 
-export default Calendar;
+export default Calender;

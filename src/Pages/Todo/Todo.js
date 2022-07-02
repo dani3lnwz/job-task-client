@@ -1,30 +1,18 @@
 import React from 'react';
-import TaskTable from './../TaskTable/TaskTable';
+import Footer from '../Shared/Footer';
+import IncompletedTasksTable from './IncompletedTasksTable';
 
-const Todo = () => {
-    const enterKeyPressed = (e) => {
-        if (e.key == "Enter") {
-          e.preventDefault();
-          console.log(e.target.value);
-        }
-      };
+const ToDo = () => {
     return (
-        <div className="mx-20 ">
-        <h1 className="my-10 text-2xl font-semibold">Tasks to complete</h1>
-        <section className=" flex ml-5 mb-3">
-          <div class="form-control w-full max-w-xs">
-            <input
-              onKeyPress={enterKeyPressed}
-              type="text"
-              placeholder="Add a task"
-              class="input input-bordered w-full max-w-xs"
-            />
-          </div>
-          <button className="btn ml-1 normal-case">Add a task</button>
-        </section>
-        <TaskTable></TaskTable>
-      </div>
+        <div>
+            <h1 className='text-center font-bold mt-5 mb-8 text-4xl text-primary'>These are incomplete tasks</h1>
+            <IncompletedTasksTable></IncompletedTasksTable>
+
+            <div className='mt-5'>
+                <Footer></Footer>
+            </div>
+        </div>
     );
 };
 
-export default Todo;
+export default ToDo;
